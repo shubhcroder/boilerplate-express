@@ -7,6 +7,8 @@ const bGround = require('fcc-express-bground');
 const myApp = require('./myApp');
 const express = require('express');
 const app = express();
+const dns = require('dns');
+dns.setDefaultResultOrder('ipv4first');
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use((req, res, next) => {
